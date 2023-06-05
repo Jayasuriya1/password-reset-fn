@@ -9,11 +9,14 @@ import ResetPassword from './component/resetPassword';
 function App() {
   return (
     <Routes>
-      <Route exact path='/login' element={<Login/>}/>
+      <Route  path='/login' element={<Login/>}/>
       <Route path='/register' element={<Register/>}/>
       <Route path='/dashboard' element={<DashBoard/>}/>
       <Route path='/forgetPassword' element={<ForgetPassword/>}/>
       <Route path='/resetPassword/:id/:token' element={<ResetPassword/>}/>
+      <Route exact path="/">
+          <Redirect to="/login" />
+      </Route>
       <Route path="*">
           <Redirect to="/login" />
       </Route>
